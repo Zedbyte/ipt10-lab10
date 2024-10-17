@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    >
+
+    <style>
+        .main__container {
+            width: 100dvw;
+            padding: 0px 500px;
+
+        }
+
+        h2 {
+            text-align: center;
+        }
+        
+    </style>
+
+</head>
+<body>
+    <div class="main__container">
+        <h2>Registration Form</h2>
+
+        <form action="/register" method="post">
+            <div>
+                <!-- Username (required) -->
+                <label for="username">Username <span style="color: red">*</span></label>
+                <input type="text" id="username" name="username" value="{{username}}" required>
+            </div>
+    
+            <div>
+                <!-- Email Address (required) -->
+                <label for="email">Email Address <span style="color: red">*</span></label>
+                <input type="email" id="email" name="email" value="{{email}}" required>
+            </div>
+    
+            <div class="grid">
+                <div>
+                    <!-- First Name -->
+                    <label for="first-name">First Name</label>
+                    <input type="text" id="first-name" name="first_name" value="{{first_name}}">
+                </div>
+        
+                <div>
+                    <!-- Last Name -->
+                    <label for="last-name">Last Name</label>
+                    <input type="text" id="last-name" name="last_name" value="{{last_name}}">
+                </div>
+            </div>
+    
+            <div>
+                <!-- Password (required) -->
+                <label for="password">Password <span style="color: red">*</span></label>
+                <input type="password" id="password" name="password" required>
+            </div>
+    
+            <div>
+                <!-- Confirm Password (required) -->
+                <label for="confirm-password">Confirm Password <span style="color: red">*</span></label>
+                <input type="password" id="confirm-password" name="confirm_password" required>
+            </div>
+    
+            <div>
+                <!-- Submit button -->
+                <button type="submit">Register</button>
+            </div>
+        </form>
+
+        <div class="error-messages">
+            <ul>
+                {{#errors}}
+                    <li>{{.}}</li>
+                {{/errors}}
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>

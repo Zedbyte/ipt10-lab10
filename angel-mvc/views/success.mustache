@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    >
+
+    <style>
+        .main__container {
+            width: 100dvw;
+            padding: 0px 500px;
+
+        }
+
+        h1, p {
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="main__container">
+        <h1>{{ title }}</h1>
+        <p>{{ message }}</p>
+
+        {{#login}}
+        <a href="/login-form"><button type="submit">Login</button></a>
+        {{/login}}
+    </div>
+</body>
+</html>
